@@ -1,0 +1,7 @@
+
+1] Use Terraform to spin an EC2 node . Use this AMI [ ami-0c3e74fa87d2a4227) ]
+
+2] Use Ansible to install and start docker service
+
+3] Manually run prometheus container in docker…. Use the command below.
+Enure you are able to connect over the internet to the Prometheus container deployeddocker run --name prometheus -p 9090:9090 -d prom/prometheus
