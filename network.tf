@@ -3,10 +3,10 @@
 ##############################################
 
 resource "aws_internet_gateway" "gw" {
-    vpc_id = aws_vpc.ansible_docker_prometheus.id
-    tags = {
-        Name = "vpc-ansible-docker-prometheus-igw"
-    }
+  vpc_id = aws_vpc.ansible_docker_prometheus_vpc.id
+  tags = {
+    Name = "vpc-ansible-docker-prometheus-igw"
+  }
 }
 
 ##############################################
@@ -14,7 +14,7 @@ resource "aws_internet_gateway" "gw" {
 ##############################################
 
 resource "aws_network_acl" "nacl_b_all" {
-  vpc_id = aws_vpc.ansible_docker_prometheus.id
+  vpc_id = aws_vpc.ansible_docker_prometheus_vpc.id
 
   egress {
     from_port  = 0
@@ -43,7 +43,7 @@ resource "aws_network_acl" "nacl_b_all" {
 ##############################################
 
 resource "aws_route_table" "routetb_A_public" {
-  vpc_id = aws_vpc.ansible_docker_prometheus.id
+  vpc_id = aws_vpc.ansible_docker_prometheus_vpc.id
 
   tags = {
     Name = "routetb_A_public"
@@ -75,7 +75,7 @@ resource "aws_route_table_association" "route-A-pub" {
 resource "aws_security_group" "group_1" {
   name        = "sec_group_1"
   description = "sec group for docker box"
-  vpc_id      = vpc_id = aws_vpc.ansible_docker_prometheus.id
+  vpc_id      = aws_vpc.ansible_docker_prometheus_vpc.id
 
   ingress {
     from_port   = 8080

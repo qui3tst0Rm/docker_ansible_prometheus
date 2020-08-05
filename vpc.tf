@@ -1,12 +1,12 @@
 provider "aws" {
-    region = var.region
+  region = var.region
 }
 
-resource "aws_vpc" "ansible_docker_prometheus" {
-    cidr_block = var.vpc-cidr
-    enable_dns_hostnames = true
+resource "aws_vpc" "ansible_docker_prometheus_vpc" {
+  cidr_block           = var.vpc-cidr
+  enable_dns_hostnames = true
 
-    tags = {
-        Name = "ansible_docker_prometheus"
-    }
+  tags = {
+    Name = "ansible_docker_prometheus_vpc"
+  }
 }

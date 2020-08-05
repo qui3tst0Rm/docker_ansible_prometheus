@@ -4,4 +4,9 @@
 2] Use Ansible to install and start docker service
 
 3] Manually run prometheus container in docker…. Use the command below.
-Enure you are able to connect over the internet to the Prometheus container deployeddocker run --name prometheus -p 9090:9090 -d prom/prometheus
+docker run --name prometheus -p 9090:9090 -d prom/prometheus
+
+4] Ensure you are able to connect over the internet to the Prometheus container deployed
+
+
+
