@@ -18,7 +18,7 @@ variable "subnet-public-1-cidr" {
 }*/
 
 variable "ec2-instance-ami" {
-  default     = "ami-0928886deb619d16f" # it seems this ami does not exist fins new ami to use
+  default     = "ami-0928886deb619d16f"
   description = "ami for ec2 instance"
 }
 
