@@ -25,7 +25,7 @@ resource "aws_instance" "ec2_instance" {
       "alternatives --set python /usr/bin/python3",
       "sudo yum install epel-release -y",
       "sudo yum install -y yum-utils",
-      "sudo yum instal -y ansible",
+      "sudo yum install -y ansible",
       "sudo useradd ansible",
       "sudo usermod -aG wheel ansible",
       "ansible --version",
