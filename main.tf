@@ -28,7 +28,7 @@ resource "aws_instance" "ec2_instance" {
       "sudo yum instal -y ansible",
       "sudo useradd ansible",
       "sudo usermod -aG wheel ansible",
-      "ansible --version",      
+      "ansible --version",
       "git clone https://github.com/qui3tst0Rm/docker_ansible_prometheus.git",
       "cd docker_ansible_prometheus/ansible-playbooks",
       "ansible-playbook install-docker-playbook.yml",

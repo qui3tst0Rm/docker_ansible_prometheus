@@ -43,9 +43,18 @@ variable "instance_names" {
   default     = ["Ansible_Docker_Prometheus-Box"]
 }
 
+variable "zone1" {
+  description = "variable for the eu-west-2a availability zone"
+  default     = "eu-west-2a"
+}
+
 /*variable "instance_names" {
   description = "names for ec2 instances"
   type        = list(string)
   default     = ["Ansible_Control_Station", "Docker-Prometheus-Box"]
 }*/
+
+
+
+
 
