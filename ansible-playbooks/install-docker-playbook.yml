@@ -4,7 +4,7 @@
     tasks:
     - name: install docker
       yum:
-        name: docker-ce
+        name: docker
         state: latest
     - name: add ec2-user to docker group
       user:
