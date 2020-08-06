@@ -20,14 +20,20 @@ resource "aws_instance" "ec2_instance" {
   provisioner "remote-exec" {
     inline = [
       "sudo yum update -y",
-      "sudo yum install -y git"
+      "sudo yum install -y git",
       "sudo yum install -y python3",
       "alternatives --set python /usr/bin/python3",
       "sudo yum install epel-release -y",
+      "sudo yum install -y yum-utils",
       "sudo yum instal -y ansible",
-      "cd /etc/ansible",
+      "sudo useradd ansible",
+      "sudo usermod -aG wheel ansible",
+      "ansible --version",      
       "git clone https://github.com/qui3tst0Rm/docker_ansible_prometheus.git",
-      "cd docker_ansible_prometheus/playbooks",
+      "ansible-playbook install-docker-playbook.yml -l localhost",
+      "cd",
+      "docker run --name prometheus -p 9090:9090 -d prom/prometheus"
+
     ]
   }
 }
