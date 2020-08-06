@@ -18,7 +18,7 @@ variable "subnet-public-1-cidr" {
 }*/
 
 variable "ec2-instance-ami" {
-  default     = "ami-0928886deb619d16f"
+  default     = "ami-0a13d44dccf1f5cf6"
   description = "ami for ec2 instance"
 }
 
