@@ -27,7 +27,7 @@ resource "aws_instance" "ec2_instance" {
       "sudo yum install -y yum-utils",
       "sudo amazon-linux-extras enable ansible2",
       "sudo amazon-linux-extras enable docker=latest",      
-      "sudo yum clean metadata && sudo yum install -y ansible2",
+      "sudo yum clean metadata && sudo yum install -y ansible",
       "sudo usermod -aG wheel ansible",
       "ansible --version",
       "git clone https://github.com/qui3tst0Rm/docker_ansible_prometheus.git",
