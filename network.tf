@@ -37,7 +37,6 @@ resource "aws_network_acl" "nacl_b_all" {
   }
 }
 
-
 ##############################################
 ##              Route Tables                ##
 ##############################################
@@ -54,8 +53,6 @@ resource "aws_route_table" "routetb_A_public" {
     gateway_id = aws_internet_gateway.gw.id
   }
 }
-
-
 
 ##############################################
 ##        Route Tables Association          ##
