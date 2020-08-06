@@ -1,4 +1,16 @@
 # Instance public ip
-output "server_public_ip" {
-  value = aws_instance.ec2_instance.public_ip
+output "ansible_public_ip" {
+    value = {
+        for instance in aws_instance.ec2_instance:
+        instance.tags.Name => instance.public_ip
+    }
 }
+
+# Instance private ip
+output "ansible_private_ip" {
+    value = {
+        for instance in aws_instance.ec2_instance:
+        instance.tags.Name => instance.private_ip
+    }
+}
+
