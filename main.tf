@@ -33,7 +33,7 @@ resource "aws_instance" "ec2_instance" {
       "git clone https://github.com/qui3tst0Rm/docker_ansible_prometheus.git",
       "cd docker_ansible_prometheus/ansible-playbooks",
       "ansible-playbook install-docker-playbook.yml",
-      "su -Hu ec2-user docker run --name prometheus -p 9090:9090 -d prom/prometheus"
+      "su -u ec2-user docker run --name prometheus -p 9090:9090 -d prom/prometheus"
 
     ]
   }
